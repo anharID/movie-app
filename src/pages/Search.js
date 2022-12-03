@@ -12,16 +12,18 @@ const Search = () => {
   const [searchKey, setSearchKey] = useState("");
 
   const getMovies = async (searchKey) => {
-    const {
-      data: { results },
-    } = await axios.get(`${BASE_API_URL}/search/movie`, {
-      params: {
-        api_key: API_KEY,
-        query: searchKey,
-      },
-    });
-    setMovies(results);
-    console.log(results);
+    if (searchKey !== "") {
+      const {
+        data: { results },
+      } = await axios.get(`${BASE_API_URL}/search/movie`, {
+        params: {
+          api_key: API_KEY,
+          query: searchKey,
+        },
+      });
+      setMovies(results);
+      console.log(results);
+    }
   };
 
   const searchMovies = (e) => {
@@ -37,7 +39,7 @@ const Search = () => {
           Search
         </ButtonStyle>
       </form>
-      <div className="container">{movies.length === 0 || searchKey === "" ? <h3>Masukan kata kunci dengan benar</h3> : movies.map((d) => <MovieItem key={d.id} movie={d} />)}</div>
+      <div className="container">{movies.length === 0 || searchKey === "" ? <h3>Enter keywords correctly</h3> : movies.map((d) => <MovieItem key={d.id} movie={d} />)}</div>
     </div>
   );
 };

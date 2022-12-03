@@ -7,7 +7,7 @@ import MovieItem from "../components/MovieItem";
 const BASE_API_URL = "https://api.themoviedb.org/3";
 const API_KEY = "4c9648599d1ab76925b2526a4cb21186";
 
-const Discover = ({ session }) => {
+const Discover = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {

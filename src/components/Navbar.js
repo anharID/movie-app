@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className="header">
       <nav>
-        <h1 className="header-title">Aplikasi film</h1>
+        <h1 className="header-title">Movie App</h1>
         <ul>
           <li className="li">
             <Link to="/">Discover</Link>
@@ -14,7 +14,7 @@ const Navbar = () => {
             <Link to="/upcoming">Upcoming</Link>
           </li>
           <li className="li">
-            <Link to="/top-rated">Top rate</Link>
+            <Link to="/top-rated">Top Rated</Link>
           </li>
           <li className="li">
             <Link to="/search">Search</Link>
